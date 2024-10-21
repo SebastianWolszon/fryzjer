@@ -11,9 +11,6 @@ body {
 .col-3 {
     width: 400px;
 }
-.table {
-    border: 1px
-}
 .footer {
     background-color: #795548;
     color: white;

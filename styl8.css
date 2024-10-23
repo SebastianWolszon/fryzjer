@@ -1,5 +1,5 @@
 body {
-    font-family: Garamond, serif;
+    font-family: Garamond, sans-serif;
     text-align: center;
 }
 .box {
@@ -8,10 +8,21 @@ body {
 .col-9 {
     width: 72% ;
 }
+.col-9 .blok1 {
+    background-color: #795548;
+    font-size: 170%;
+}
+.col-9 .blok2 {
+    height: 400px;
+}
 .col-3 {
     width: 400px;
+    background-color: #BCAAA4;
+    color: #795548;
+    height: 400px;
+    width: 28%;
 }
-.footer {
+footer {
     background-color: #795548;
     color: white;
     padding: 20px;
@@ -28,7 +39,7 @@ table tr:hover {
 h4 {
     font-size: 200%;
 }
-.image {
+img {
     padding: 20px;
     border-radius: 40px;
 }
@@ -37,4 +48,16 @@ a {
 }
 input[type="radio"] {
     margin: 7px;
+}
+h1 {
+    margin: 0;
+}
+.col-3 {
+    width: 28%;
+}
+.col-3 .blok-1, .col-3 .blok-2 {
+    background-color: #BCAAA4;
+    color: #795548;
+    height: 400px;
+    text-align: center;
 }

@@ -1,57 +1,97 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fryzjerstwo</title>
-    <link rel="stylesheet" href="styl8.css"/>
-</head>
-<body>
-    <div class="box">
-        <div class="col-9">
-            <h2>PROMOCJA!</h2>
-                <div>
-            <input id="skotkie" type="radio" name="dlugosc" value="25" checked/>
-            <label for="krotkie">Krótkie</label></br>
-            </div>
-            <div>
-            <input id="srednie" type="radio" name="dlugosc" value="30"/>
-            <label for="srednie">Średnie</label></br>
-            </div>
-            <div>
-            <input id="poldlugie" type="radio" name="dlugosc" value="40"/>
-            <label for="poldlugie">Półdługie</label></br>
-            </div>
-            <div>
-            <input id="dlugie" type="radio" name="dlugosc" value="50"/>
-            <label for="dlugie">Długie</label></br>
-            </div>
-            <button onclick="odkryjPromocje()">Odkryj promocje</button>
-            <p>Cena promocyjna <span id="cena-promocyjna">0</span></p>
-        </div>
-        </div>
-        </body>
-        <script>
-            function obliczPromocje() {
-            let krotkie= document.getElementById("krotkie")
-            let srednie= document.getElementById("srednie")
-            let poldlugie= document.getElementById("poldlugie")
-            let dlugie= document.getElementById("dlugie")
-
-            if (krotkie.checked) {
-                document.getElementById("cena-promocyjna").innerHTML = krotkie.value - 10;
-                console.log('hura jest krotkie', krotkie.value - 10)
-            } else if (srednie.checked) {
-                document.getElementById("cena-promocyjna").innerHTML = srednie.value - 10;
-                console.log('hura jest srednie', krotkie.value - 10)
-            } else if (poldlugie.checked) {
-                document.getElementById("cena-promocyjna").innerHTML = poldlugie.value - 10;
-                console.log('hura jest poldlugie', krotkie.value - 10)
-            } else if (dlugie.checked) {
-                document.getElementById("cena-promocyjna").innerHTML = dlugie.value - 10;
-                console.log('hura jest dlugie', krotkie.value - 10)
-            };
+    <link rel="stylesheet" href="styl8.css" />
+    <script>
+      function handleClick() {
+        let price;
+        if (document.getElementById("krotkie").checked) {
+          price = 25;
+        } else if (document.getElementById("srednie").checked) {
+          price = 30;
+        } else if (document.getElementById("poldlugie").checked) {
+          price = 40;
+        } else if (document.getElementById("dlugie").checked) {
+          price = 50;
         }
-          </script>
-          <footer> Autor: Sebastian Wolszon 4TI </footer>
-        </html>
+
+        let discount_price = price - 10;
+
+        let status = document.getElementById("status");
+        status.textContent = `cena promocyjna: ${discount_price}`;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="site">
+      <div class="left">
+        <header>
+          <h1><a href="index.html">SALON FRYZJERSKI</a></h1>
+        </header>
+        <main>
+          <h2>PROMOCJA!</h2>
+          <div class="hairtype">
+            <input type="radio" name="hairtype" id="krotkie" />
+            <label for="krotkie">Krótkie</label>
+          </div>
+          <div class="hairtype">
+            <input type="radio" name="hairtype" id="srednie" />
+            <label for="srednie">Średnie</label>
+          </div>
+          <div class="hairtype">
+            <input type="radio" name="hairtype" id="poldlugie" />
+            <label for="poldlugie">Półdługie</label>
+          </div>
+          <div class="hairtype">
+            <input type="radio" name="hairtype" id="dlugie" />
+            <label for="dlugie">Długie</label>
+          </div>
+          <div>
+            <button type="button" onclick="handleClick()">
+              Odkryj promocję
+            </button>
+          </div>
+          <p id="status"></p>
+        </main>
+        <section class="contact">
+          <p>Witaj! Miło nam, że odwiedziłeś nasz salon. Sprawdź promocje!</p>
+          <h4>Kontakt: 444 555 666</h4>
+        </section>
+      </div>
+      <div class="right">
+        <section class="prices">
+          <h4><a href="fryzura.html">Ceny strzyżenia</a></h4>
+          <table>
+            <tr>
+              <th>Długość włosów</th>
+              <th>Cena</th>
+            </tr>
+            <tr>
+              <td>Krótkie</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>Średnie</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>Półdługie</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>Długie</td>
+              <td>50</td>
+            </tr>
+          </table>
+        </section>
+        <section class="image">
+          <img src="obraz1.jpg" alt="Fryzjerka" />
+        </section>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>
